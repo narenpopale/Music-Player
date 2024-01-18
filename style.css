@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 15px;
+    text-align: center;
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.cnt {
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    left: auto;
+}
+
+.container {
+    border: 4px solid rgb(255, 255, 255);
+    margin: 20px;
+    padding: 2vw;
+    border-radius: 10px;
+    background-color:rgb(110 247 122 / 26%);
+}
+
+.container .box {
+    margin: 5px auto;
+}
+
+.box h4 {
+    color: white;
+    text-align: center;
+    padding: 2px;
+    margin: 4px auto;
+}
+
+audio {
+    width: 100%;
+}
