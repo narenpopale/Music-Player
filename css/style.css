@@ -23,13 +23,18 @@
     align-items: center;
 }
 
+.main .side .head h3:hover {
+    cursor: pointer;
+}
+
 .main .side .playlist-list {
     height: 85%;
     overflow: scroll;
 }
 
-.main .side .playlist-list h5 {
+.main .side .playlist-list h4 {
     margin: 1.5vw;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
