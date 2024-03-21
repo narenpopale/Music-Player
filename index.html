@@ -3,39 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <img src="image.jfif" alt="">
-    <div class="cnt">
-        <h1>Songs</h1>
-        <div class="container">
-            <div class="box item1">
-            <h4>Gzarish</h4>
+    <div class="main">
+        <div class="side">
+            <div class="head">
+                <h3>+ Create Playlist</h3>
+            </div>
+            <div class="playlist-list">
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+                <h5>Playlist 1</h5>
+            </div>
+        </div>
+        <div class="content">
+            <div class="head">
+                <div class="pl-name"><h1>Playlist 1</h1></div>
+                <div class="add-song"><h3>+ Add Song</h3></div>
+            </div>
+            <div class="song-list">
+                <div class="list-head">
+                    <h3 class="title">Title</h3>
+                    <h3 class="date">Date Added</h3>
+                    <h3 class="duration">Duration</h3>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                    <div class="item">
+                        <p class="title">Title</p>
+                        <p class="date">Date Added</p>
+                        <p class="duration">Duration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="player">
+        <div class="song-name">
+            <h2>#</h2>
+            <marquee behavior="scroll" direction="left" scrollamount="3">Song Nmae</marquee>
+        </div>
+        <div class="audio">
             <audio src="Music/m1.mp3" controls></audio>
-        </div>
-        <div class="box item2">
-            <h4>Backbone</h4>
-            <audio src="Music/m2.mp3" controls></audio>
-        </div>
-        <div class="box item3">
-            <h4>Mummy</h4>
-            <audio src="Music/m3.mp3" controls></audio>
-        </div>
-        <div class="box item3">
-            <h4>Ek tha Ladka</h4>
-            <audio src="Music/m4.mp3" controls></audio>
-        </div>
-        <div class="box item3">
-            <h4>Radha</h4>
-            <audio src="Music/m5.mp3" controls></audio>
-        </div>
-        <div class="box item3">
-            <h4>Surma</h4>
-            <audio src="Music/m6.mp3" controls></audio>
+            <button> <h3><<</h3> </button>
+            <button> <h3>>></h3> </button>
         </div>
     </div>
 </div>
+
+
+<script src="js/script.js"></script>
+<script src="js/db.js"></script>
 </body>
 </html>

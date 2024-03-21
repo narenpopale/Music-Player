@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.main {
+    height: 85vh;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.main .side {
+    width: 15vw;
+    min-width: 150px;
+    background-color: aqua;
+}
+
+.main .side .head {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .side .playlist-list {
+    height: 85%;
+    overflow: scroll;
+}
+
+.main .side .playlist-list h5 {
+    margin: 1.5vw;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.main .content {
+    width: 90vw;
+    background-color: blueviolet;
+}
+
+.main .content .head {
+    height: 20%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.main .content .song-list {
+    height: 80%;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.main .content .song-list .list-head{
+    border-bottom: 2px solid black;
+    height: 10%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-bottom: 1vw;
+}
+
+.main .content .song-list .list {
+    height: 90%;
+    overflow: scroll;
+}
+
+.main .content .song-list .list .item{
+    margin-bottom: 2vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.player {
+    height: 15vh;
+    background-color: yellowgreen;
+    display: flex;
+}
+
+.player .song-name {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.player .audio {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player .audio audio {
+    width: 70%;
+}
+
+.player .audio button {
+    cursor: pointer;
+    border: none;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+}
