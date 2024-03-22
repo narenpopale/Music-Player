@@ -23,7 +23,7 @@
     align-items: center;
 }
 
-.main .side .head h3:hover {
+.main .side .head p:hover {
     cursor: pointer;
 }
 
@@ -32,7 +32,7 @@
     overflow: scroll;
 }
 
-.main .side .playlist-list h4 {
+.main .side .playlist-list p {
     margin: 1.5vw;
     cursor: pointer;
 }
@@ -54,6 +54,10 @@
     align-items: center;
     padding: 0 5vw;
     box-sizing: border-box;
+}
+
+.main .content .head .add-song:hover {
+    cursor: pointer;
 }
 
 .main .content .song-list {
