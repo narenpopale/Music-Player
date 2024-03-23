@@ -1,19 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 
-
 .main {
+    color: white;
     height: 85vh;
-    background-color: antiquewhite;
     display: flex;
+    font-size: 1.3vw;
 }
 
 .main .side {
     width: 15vw;
     min-width: 150px;
-    background-color: aqua;
+    background-color: #121212;
+    border-right: 2px solid #9B9B9B;
+    font-weight: bold;
 }
 
 .main .side .head {
@@ -21,6 +24,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.main .side .head p {
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: white;
+    color: #121212;
 }
 
 .main .side .head p:hover {
@@ -43,17 +56,31 @@
 
 .main .content {
     width: 90vw;
-    background-color: blueviolet;
+    background-color: #121212;
 }
 
 .main .content .head {
     height: 20%;
-    background-color: blueviolet;
+    background-color: #121212;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
     box-sizing: border-box;
+}
+
+.pl-name p {
+    font-weight: bold;
+    font-size: 2.5vw;
+}
+
+.main .content .head .add-song p {
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: white;
+    color: #121212;
 }
 
 .main .content .head .add-song:hover {
@@ -67,7 +94,8 @@
 }
 
 .main .content .song-list .list-head{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #9B9B9B;
+    font-weight: bold;
     height: 10%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -83,6 +111,7 @@
     margin-bottom: 2vw;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 0.5px dotted white;
 }
 
 .main .content .song-list .list .item:hover {
@@ -90,8 +119,11 @@
 }
 
 .player {
+    font-size: 1.3vw;
+    color: white;
     height: 15vh;
-    background-color: yellowgreen;
+    background-color: #101010;
+    border-top: 2px solid #9B9B9B;
     display: flex;
 }
 
@@ -118,6 +150,7 @@
 
 .audio audio {
     width: 100%;
+    height: 4vw;
 }
 
 .player .audio button {
