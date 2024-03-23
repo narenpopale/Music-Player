@@ -85,6 +85,10 @@
     grid-template-columns: 2fr 1fr 1fr;
 }
 
+.main .content .song-list .list .item:hover {
+    cursor: pointer;
+}
+
 .player {
     height: 15vh;
     background-color: yellowgreen;
@@ -108,8 +112,12 @@
     align-items: center;
 }
 
-.player .audio audio {
+.player .audio #music {
     width: 70%;
+}
+
+.audio audio {
+    width: 100%;
 }
 
 .player .audio button {

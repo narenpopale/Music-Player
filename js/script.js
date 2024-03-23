@@ -1,6 +1,8 @@
 
 var allplaylist = [];
 var currPlaylist;
+var allSongs = [];
+var currSongIndex;
 
 
 // Creating Playlist
@@ -15,7 +17,7 @@ createPlaylist.addEventListener('click', () => {
         let playlistId = shortid();
         var transaction = db.transaction("store", "readwrite");
         var myStore = transaction.objectStore("store");
-        // console.log(myStore);
+        
         let newPlaylist = {
             id: playlistId,
             name: playlistName,
@@ -55,66 +57,158 @@ window.addEventListener('load', () => {
 
 
 setInterval(() => {
+
     var playlist = document.querySelectorAll('.playlist-list p');
-    
+
+    // Eventlistener for Playlists
     playlist.forEach((item) => {
         item.addEventListener('click', (e) => {
             getCurrentPlaylist(item);
+            addAllSongs();
         })
     })
 
+    // Adding Current Playlist name 
     if (currPlaylist != undefined) {
         document.querySelector('.pl-name p').textContent = `${currPlaylist.name}`;
-        // console.log(currPlaylist);
+        allSongs = currPlaylist.songs;
     }
+    else {
+        document.querySelector('.pl-name p').textContent = "Select Playlist";
+    }
+
+
+    // Adding Current Song to the player
+
+    // Eventlistener for Songs
+    document.querySelectorAll('.song-title').forEach((song) => {
+        song.addEventListener('click', () => {
+            getCurrentSongIndex(song.textContent);
+            addSongtoPlayer();
+        })
+    })
 
 }, 1000);
 
 
 
-// getting current playlist to the currPlaylist variable
+// Getting current playlist to the currPlaylist variable
 function getCurrentPlaylist(obj) {
     allplaylist.forEach((item) => {
         if (item.name == obj.textContent) {
-            // console.log(item.name);
             currPlaylist = item;
         }
     })
 }
 
 
+// Getting current song index
+function getCurrentSongIndex(song) {
+    if (currPlaylist != undefined) {
+        let i = 0;
+        currPlaylist.songs.forEach((item) => {
+            if (item.name == song) {
+                currSongIndex = i;
+            }
+            i++;
+        })
+    }
+}
+
+
+// Adding Current Playlist Songs to the HTML
+function addAllSongs() {
+    let songs = "";
+
+    currPlaylist.songs.forEach(song => {
+        songs += `
+            <div class="item">
+                <p class="song-title">${song.name}</p>
+                <p class="date">${song.date.getDate()} / ${song.date.getMonth() + 1} / ${song.date.getFullYear()}</p>
+                <p class="duration">${song.duration}</p>
+            </div>
+        `;
+    });
+
+    document.querySelector('.list').innerHTML = songs;
+}
+
+
+
+// Function for adding current song to the DOM
+function addSongtoPlayer() {
+    let audio = document.querySelector('#music');
+    let sname = document.querySelector('marquee');
+    audio.innerHTML = `<audio src="${allSongs[currSongIndex].audio}" controls></audio>`;
+    sname.textContent = allSongs[currSongIndex].name;
+    document.querySelector('audio').play();
+}
+
+
 // Adding song to the playlist
-var addSong = document.querySelector(".add-song");
-// console.log(addSong);
-
-addSong.addEventListener('click', ()=>{
-
-})
-
 var saveSong = document.querySelector('#save-song');
 var songName = document.querySelector('#s-name');
 var songAudio = document.querySelector('#s-file');
-// console.log(saveSong);
 
+// Storing song to the DB
 saveSong.addEventListener('click', () => {
-    console.log(songAudio.value);
+
     let songs = currPlaylist.songs;
 
-    if(db) {
-        var transaction = db.transaction("store", "readwrite");
-        var myStore = transaction.objectStore("store");
+    if (db) {
 
-        let newSong = {
-            name: songName.value,
-            audio: songAudio.value,
-            date: new Date(),
-            duration: 1
-        }
-        songs.push(newSong);
+        let fr = new FileReader();
+        fr.readAsDataURL(songAudio.files[0]);
 
-        currPlaylist.songs = songs;
+        // For URL
+        fr.addEventListener('load', () => {
+            const url = fr.result;
 
-        console.log(currPlaylist);
-        myStore.put(currPlaylist);
+            const audio = new Audio();
+            audio.src = url;
+
+            // FOR Duration
+            audio.addEventListener('loadedmetadata', () => {
+                const audioDuration = audio.duration / 60;
+
+                var transaction = db.transaction("store", "readwrite");
+                var myStore = transaction.objectStore("store");
+
+                let newSong = {
+                    name: songName.value,
+                    audio: url,
+                    date: new Date(),
+                    duration: audioDuration.toFixed(2)
+                }
+                songs.push(newSong);
+
+                currPlaylist.songs = songs;
+
+                myStore.put(currPlaylist);
+
+                addAllSongs();
+            });
+
+        })
+
+    }
+})
+
+
+// Song Navigation
+var left = document.querySelector('#left');
+var right = document.querySelector('#right');
+
+left.addEventListener('click', () => {
+    if (currSongIndex != undefined && currSongIndex > 0) {
+        currSongIndex--;
+        addSongtoPlayer();
+    }
+})
+
+right.addEventListener('click', () => {
+    if (currSongIndex != undefined && currSongIndex < allSongs.length - 1) {
+        currSongIndex++;
+        addSongtoPlayer();
     }
 })
