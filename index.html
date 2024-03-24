@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +17,10 @@
 </head>
 
 <body>
+    <div class="mynav">
+        <button>=</button>
+        <p>Music Player</p>
+    </div>
     <div class="main">
         <div class="side">
             <div class="head">
@@ -77,14 +82,18 @@
             <marquee behavior="scroll" direction="left" scrollamount="3">Play the Song</marquee>
         </div>
         <div class="audio">
+            <button id="left">
+                << 
+            </button>
             <div id="music">
                 <audio src="" controls></audio>
             </div>
-            <button id="left">
-                << </button>
-                    <button id="right">
-                        >>
-                    </button>
+            <button id="left" class="left-none">
+                << 
+            </button>
+            <button id="right">
+                >>
+            </button>
         </div>
     </div>
     </div>

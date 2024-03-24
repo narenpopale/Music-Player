@@ -1,0 +1,126 @@
+
+@media (min-width:600px) {
+    .main .side {
+        display: block;
+    }
+}
+
+@media (max-width:600px) {
+
+    .mynav {
+        display: block;
+        background-color: #121212;
+        height: 10vh;
+        padding: 2vw 5vw;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+    }
+
+    .mynav button {
+        font-weight: bold;
+        padding: 1px 10px;
+        border-radius: 5px;
+        background-color: white;
+        color: #121212;
+    }
+
+    .mynav p {
+        font-weight: bold;
+        font-size: 5vw;
+        color: white;
+    }
+    
+    .main {
+        height: 75vh;
+    }
+
+    .main .side {
+        display: none;
+    }
+
+    .main .side .head p {
+        font-size: 2vw;
+    }
+
+    .main .side .playlist-list {
+        font-size: 2.5vw;
+    }
+
+    .main .content {
+        font-size: 2.5vw;
+        width: 100%;
+    }
+    
+    .main .content .head {
+        font-size: 2.5vw;
+        height: 10%;
+    }
+
+    .pl-name, .add-song {
+        display: flex;
+        align-items: center;
+    }
+
+    .pl-name p {
+        font-weight: bold;
+        font-size: 4vw;
+    }
+
+    .main .content .head .add-song p {
+        font-size: 2vw;
+    }
+
+    .main .content .song-list .list-head{
+        height: 7%;
+    }
+    
+    .main .content .song-list .list {
+        height: 100%;
+    }
+
+    .main .content .song-list .list .item{
+        margin-top: 2vw;
+    }
+
+    .player {
+        font-size: 3vw;
+        height: 15vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player .song-name {
+        width: 90%;
+        height: 30%;
+        padding-top: 4vw;
+    }
+    
+    .player .audio {
+        width: 90%;
+        height: 70%;
+    }
+
+    .player .audio #music {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    .player .audio button {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .player .audio audio {
+        height: 8vw;
+    }
+
+    .left-none {
+        display: none;
+    }
+
+}

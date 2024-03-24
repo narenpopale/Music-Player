@@ -4,6 +4,14 @@
     font-family: "Roboto", sans-serif;
 }
 
+.mynav {
+    display: none;
+}
+
+.mynav p {
+    display: contents;
+}
+
 .main {
     color: white;
     height: 85vh;
@@ -12,6 +20,7 @@
 }
 
 .main .side {
+    display: block;
     width: 15vw;
     min-width: 150px;
     background-color: #121212;

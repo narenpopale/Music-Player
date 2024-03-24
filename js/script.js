@@ -212,3 +212,20 @@ right.addEventListener('click', () => {
         addSongtoPlayer();
     }
 })
+
+
+// Side Bar Featrue
+var btn = document.querySelector('.mynav button');
+var isOpen = false;
+
+btn.addEventListener('click', ()=>{
+    let side = document.querySelector('.main .side');
+    if(!isOpen) {
+        side.style.display = "block";
+        isOpen = true;
+    }
+    else {
+        side.style.display = "none";
+        isOpen = false;
+    }
+})
